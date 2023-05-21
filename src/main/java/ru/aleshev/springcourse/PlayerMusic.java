@@ -2,6 +2,7 @@ package ru.aleshev.springcourse;
 
 import java.util.Random;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -31,11 +32,12 @@ public class PlayerMusic {
 		}
 	}
 	
-	@Deprecated
+	@Value("${volue1}")
 	private Integer voluem;
-	@Deprecated
+	@Value("${volue1}")
 	private String name;
 //	public void setMusic(Music music) { }
+	
 	@Deprecated
 	public int getVoluem() {
 		return voluem;

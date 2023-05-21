@@ -12,5 +12,7 @@ public class testSpring {
             e.printStackTrace();
         }	
 		music.playMusic(MusicEnum.CLASSICMUSIC);
+		
+		System.out.print(music.getVoluem());
 	}
 }
