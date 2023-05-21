@@ -7,10 +7,10 @@ public class testSpring {
 		PlayerMusic music = null;
 		try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext (
 				"applicationContext.xml");) {
-			 music = context.getBean("musicPlayer", PlayerMusic.class);
+			music = context.getBean("playerMusic", PlayerMusic.class);
 		} catch (Exception e) {
             e.printStackTrace();
-        }
-		 music.playMusic();
+        }	
+		music.playMusic(MusicEnum.CLASSICMUSIC);
 	}
 }
