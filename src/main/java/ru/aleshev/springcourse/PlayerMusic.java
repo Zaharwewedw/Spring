@@ -1,5 +1,6 @@
 package ru.aleshev.springcourse;
 
+import java.util.List;
 import java.util.Random;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.context.annotation.Scope;
@@ -8,28 +9,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class PlayerMusic {
 	//private Music music;
-	@Autowired
-	@Qualifier ("jassMusic")
-	private Music music1;
+//	@Autowired
+//	@Qualifier ("jassMusic")
+//	private Music music1;
+//	
+//	@Autowired
+//	@Qualifier ("rockMusic")
+//	private Music music2;
+//	
+//	private Music music3;
+	public List<Music> listmusic;
 	
-	@Autowired
-	@Qualifier ("rockMusic")
-	private Music music2;
+	public PlayerMusic(List<Music> listmusic) {
+		this.listmusic = listmusic;
+	}
 	
-	@Autowired
-	@Qualifier ("classicMusic")
-	private Music music3;
-	
-	public PlayerMusic() { }
-	
-	public void playMusic(MusicEnum enumMusic) {
-		Random r = new Random();
-        int x = r.nextInt(3) + 1;
-		switch (enumMusic) {
-		case JASSMUSIC: System.out.println(music1.getSon()[x-1]);
-		case ROCKMUSIC: System.out.println(music2.getSon()[x-1]);
-		case CLASSICMUSIC: System.out.println(music3.getSon()[x-1]);
-		}
+	public void playMusic() {
+		System.out.print(((Music)listmusic.toArray()[new Random().nextInt(3)]).getSon());
 	}
 	
 	@Value("${volue1}")

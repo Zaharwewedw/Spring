@@ -2,13 +2,10 @@ package ru.aleshev.springcourse;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class JassMusic implements Music{
-	String[] arrSong = new String[] {
-			"JassMusic", "JassMusic_JassMusic","JassMusic_JassMusic_JassMusic"
-			};
+	String arrSong = "jass" ;
 	@Override
-	public String[] getSon() {
+	public String getSon() {
 		return arrSong;
 	}
 
